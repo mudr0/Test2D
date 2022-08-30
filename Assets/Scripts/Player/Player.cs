@@ -34,5 +34,10 @@ namespace Rocket
         {
             _healthManager.TakeDamage();
         }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            _healthManager.TakeDamage();
+        }
     }
 }
