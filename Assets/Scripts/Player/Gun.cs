@@ -4,21 +4,28 @@ namespace Rocket
 {
     public class Gun
     {
+        private Sprite _bulletSprite;
         private Transform _barrel;
-        private Rigidbody2D _bullet;
         private float _force;
 
-        public Gun(Transform barrel, Rigidbody2D bullet, float force)
+        public Gun(Sprite bulletSprite, Transform barrel, float force)
         {
             _barrel = barrel;
-            _bullet = bullet;
             _force = force;
+            _bulletSprite = bulletSprite;
         }
 
         public void Shoot()
         {
-            var temAmmunition = MonoBehaviour.Instantiate(_bullet, _barrel.position, _barrel.rotation);
-            temAmmunition.AddForce(_barrel.up * _force);
+            var builder = new GameObjectBuilder();
+            var tempAmmunition = builder
+                .Visual
+                .Name("Bullet")
+                .Sprite(_bulletSprite)
+                .Position(_barrel.position)
+                .Physics
+                .RigidBody2D(0, _force *_barrel.up)
+                .BoxCollider2D();
         }
     }
 }

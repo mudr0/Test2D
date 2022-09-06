@@ -169,7 +169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &442685709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,9 +357,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 4
   _hp: 1
-  _bullet: {fileID: -6533386493834436276, guid: d41d99048be26b842a1c62b1dfc8edde, type: 3}
+  _bulletSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   _barrel: {fileID: 188933977}
-  _force: 800
+  _force: 0.1
 --- !u!212 &2096148350
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -419,7 +419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096148348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 188933977}

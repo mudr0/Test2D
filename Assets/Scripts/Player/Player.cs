@@ -6,7 +6,7 @@ namespace Rocket
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _hp;
-        [SerializeField] private Rigidbody2D _bullet;
+        [SerializeField] private Sprite _bulletSprite;
         [SerializeField] private Transform _barrel;
         [SerializeField] private float _force;
         private MoveTransform _moveTransform;
@@ -17,7 +17,7 @@ namespace Rocket
         {
             _healthManager = new HealthManager( _hp, gameObject);
             _moveTransform = new MoveTransform(transform, _speed);
-            _gun = new Gun(_barrel, _bullet, _force);
+            _gun = new Gun(_bulletSprite, _barrel, _force);
         }
 
         private void Update()
